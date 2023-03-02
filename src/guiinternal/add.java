@@ -42,6 +42,12 @@ public class add extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         discard = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        update = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        delete = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        ads = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -64,22 +70,24 @@ public class add extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Save List");
-        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         javax.swing.GroupLayout saveLayout = new javax.swing.GroupLayout(save);
         save.setLayout(saveLayout);
         saveLayout.setHorizontalGroup(
             saveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE)
+            .addGroup(saveLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         saveLayout.setVerticalGroup(
             saveLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, saveLayout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(saveLayout.createSequentialGroup()
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel2.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 90, 30));
+        jPanel2.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 70, 30));
 
         discard.setBackground(new java.awt.Color(153, 204, 255));
         discard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -97,12 +105,99 @@ public class add extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Discard");
-        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        discard.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 90, 20));
+        discard.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 30));
 
-        jPanel2.add(discard, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 90, 30));
+        jPanel2.add(discard, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 70, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 770, 60));
+        update.setBackground(new java.awt.Color(153, 204, 255));
+        update.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateMouseExited(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Update");
+
+        javax.swing.GroupLayout updateLayout = new javax.swing.GroupLayout(update);
+        update.setLayout(updateLayout);
+        updateLayout.setHorizontalGroup(
+            updateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        updateLayout.setVerticalGroup(
+            updateLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(updateLayout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 70, 30));
+
+        delete.setBackground(new java.awt.Color(153, 204, 255));
+        delete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteMouseExited(evt);
+            }
+        });
+        delete.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Delete");
+        delete.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 30));
+
+        jPanel2.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 70, -1));
+
+        ads.setBackground(new java.awt.Color(153, 204, 255));
+        ads.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ads.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ads.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                adsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                adsMouseExited(evt);
+            }
+        });
+
+        jLabel7.setFont(new java.awt.Font("Trebuchet MS", 1, 11)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Add");
+
+        javax.swing.GroupLayout adsLayout = new javax.swing.GroupLayout(ads);
+        ads.setLayout(adsLayout);
+        adsLayout.setHorizontalGroup(
+            adsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        adsLayout.setVerticalGroup(
+            adsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(adsLayout.createSequentialGroup()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jPanel2.add(ads, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 70, 30));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 260, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -131,16 +226,46 @@ public class add extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_discardMouseEntered
 
     private void discardMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_discardMouseExited
-        discard.setBackground(headcolor);
+         discard.setBackground(headcolor);
     }//GEN-LAST:event_discardMouseExited
+
+    private void updateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseEntered
+       update.setBackground(bodycolor);
+    }//GEN-LAST:event_updateMouseEntered
+
+    private void updateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseExited
+        update.setBackground(headcolor);
+    }//GEN-LAST:event_updateMouseExited
+
+    private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
+        delete.setBackground(bodycolor);
+    }//GEN-LAST:event_deleteMouseEntered
+
+    private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
+         delete.setBackground(headcolor);
+    }//GEN-LAST:event_deleteMouseExited
+
+    private void adsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adsMouseEntered
+        ads.setBackground(bodycolor);
+    }//GEN-LAST:event_adsMouseEntered
+
+    private void adsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adsMouseExited
+         ads.setBackground(headcolor);
+    }//GEN-LAST:event_adsMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel ads;
+    private javax.swing.JPanel delete;
     private javax.swing.JPanel discard;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel save;
+    private javax.swing.JPanel update;
     // End of variables declaration//GEN-END:variables
 }

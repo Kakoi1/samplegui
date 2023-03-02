@@ -36,12 +36,6 @@ public class main extends javax.swing.JFrame {
         horizon = new javax.swing.JPanel();
         dashpane = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        user = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        update = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        delete = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
         retri = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         report = new javax.swing.JPanel();
@@ -75,57 +69,6 @@ public class main extends javax.swing.JFrame {
         jLabel7.setText("Dashboard");
         dashpane.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
 
-        user.setBackground(new java.awt.Color(255, 153, 153));
-        user.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                userMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                userMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                userMouseExited(evt);
-            }
-        });
-        user.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel8.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Add a Fish Deatils");
-        user.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
-
-        update.setBackground(new java.awt.Color(255, 153, 153));
-        update.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                updateMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                updateMouseExited(evt);
-            }
-        });
-        update.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Update");
-        update.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
-
-        delete.setBackground(new java.awt.Color(255, 153, 153));
-        delete.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                deleteMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                deleteMouseExited(evt);
-            }
-        });
-        delete.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel10.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Delete");
-        delete.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
-
         retri.setBackground(new java.awt.Color(255, 153, 153));
         retri.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -144,6 +87,9 @@ public class main extends javax.swing.JFrame {
 
         report.setBackground(new java.awt.Color(255, 153, 153));
         report.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reportMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 reportMouseEntered(evt);
             }
@@ -155,7 +101,7 @@ public class main extends javax.swing.JFrame {
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("Generate Report");
+        jLabel12.setText("View Report");
         report.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
 
         javax.swing.GroupLayout horizonLayout = new javax.swing.GroupLayout(horizon);
@@ -164,48 +110,30 @@ public class main extends javax.swing.JFrame {
             horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(horizonLayout.createSequentialGroup()
                 .addGroup(horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(horizonLayout.createSequentialGroup()
-                        .addGroup(horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(horizonLayout.createSequentialGroup()
-                                .addGap(2, 2, 2)
-                                .addGroup(horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(retri, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, horizonLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dashpane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(report, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                    .addComponent(retri, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(report, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dashpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         horizonLayout.setVerticalGroup(
             horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(horizonLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addComponent(dashpane, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(132, 132, 132)
+                .addComponent(dashpane, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(report, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(user, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(retri, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
 
         jPanel1.add(horizon);
-        horizon.setBounds(0, 0, 170, 460);
+        horizon.setBounds(0, 0, 170, 490);
 
         header.setBackground(new java.awt.Color(0, 153, 204));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(header);
-        header.setBounds(170, 0, 770, 40);
+        header.setBounds(170, 0, 800, 40);
 
         despane.setPreferredSize(new java.awt.Dimension(760, 420));
 
@@ -213,30 +141,27 @@ public class main extends javax.swing.JFrame {
         despane.setLayout(despaneLayout);
         despaneLayout.setHorizontalGroup(
             despaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 770, Short.MAX_VALUE)
+            .addGap(0, 796, Short.MAX_VALUE)
         );
         despaneLayout.setVerticalGroup(
             despaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGap(0, 450, Short.MAX_VALUE)
         );
 
         jPanel1.add(despane);
-        despane.setBounds(170, 40, 770, 420);
+        despane.setBounds(170, 40, 796, 450);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 28, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 488, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -257,36 +182,6 @@ public class main extends javax.swing.JFrame {
         dashpane.setBackground(dashcolor);
     }//GEN-LAST:event_dashpaneMouseExited
 
-    private void userMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseClicked
-        add ad = new add();
-
-        despane.add(ad).setVisible(true);
-    }//GEN-LAST:event_userMouseClicked
-
-    private void userMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseEntered
-        user.setBackground(bodycolor);
-    }//GEN-LAST:event_userMouseEntered
-
-    private void userMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userMouseExited
-        user.setBackground(dashcolor);
-    }//GEN-LAST:event_userMouseExited
-
-    private void updateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseEntered
-        update.setBackground(bodycolor);
-    }//GEN-LAST:event_updateMouseEntered
-
-    private void updateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseExited
-        update.setBackground(dashcolor);
-    }//GEN-LAST:event_updateMouseExited
-
-    private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
-        delete.setBackground(bodycolor);
-    }//GEN-LAST:event_deleteMouseEntered
-
-    private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
-        delete.setBackground(dashcolor);
-    }//GEN-LAST:event_deleteMouseExited
-
     private void retriMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_retriMouseEntered
         retri.setBackground(bodycolor);
     }//GEN-LAST:event_retriMouseEntered
@@ -302,6 +197,13 @@ public class main extends javax.swing.JFrame {
     private void reportMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportMouseExited
         report.setBackground(dashcolor);
     }//GEN-LAST:event_reportMouseExited
+
+    private void reportMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportMouseClicked
+      add up = new add();
+      
+      despane.add(up).setVisible(true);
+      
+    }//GEN-LAST:event_reportMouseClicked
 
     /**
      * @param args the command line arguments
@@ -341,20 +243,14 @@ public class main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dashpane;
-    private javax.swing.JPanel delete;
     private javax.swing.JDesktopPane despane;
     private javax.swing.JPanel header;
     private javax.swing.JPanel horizon;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel report;
     private javax.swing.JPanel retri;
-    private javax.swing.JPanel update;
-    private javax.swing.JPanel user;
     // End of variables declaration//GEN-END:variables
 }

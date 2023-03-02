@@ -42,7 +42,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         manage = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         setting = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -56,7 +56,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(255, 153, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(530, 0, 170, 190);
+        jPanel3.setBounds(530, 0, 170, 160);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setText("Aquatic life Recording Application");
@@ -68,7 +68,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 40, 200, 30);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 190));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 160));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.setLayout(null);
@@ -77,6 +77,9 @@ public class dashboard extends javax.swing.JInternalFrame {
         manage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         manage.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         manage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 manageMouseEntered(evt);
             }
@@ -95,8 +98,8 @@ public class dashboard extends javax.swing.JInternalFrame {
         jLabel4.setText("Manage User");
         manage.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 127, 112, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\College-PC\\Pictures\\Saved Pictures\\icons8-admin-settings-male-100.png")); // NOI18N
-        manage.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 112, -1));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-admin-settings-male-100.png"))); // NOI18N
+        manage.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 110, 110));
 
         jPanel2.add(manage);
         manage.setBounds(100, 40, 160, 160);
@@ -120,13 +123,13 @@ public class dashboard extends javax.swing.JInternalFrame {
         setting.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 127, 112, -1));
         setting.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 21, 112, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\College-PC\\Downloads\\icons8-services-100.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-services-100.png"))); // NOI18N
         setting.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 21, 112, 100));
 
         jPanel2.add(setting);
         setting.setBounds(530, 40, 160, 160);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 760, 300));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 800, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -147,16 +150,22 @@ public class dashboard extends javax.swing.JInternalFrame {
         setting.setBackground(headcolor);
     }//GEN-LAST:event_settingMouseExited
 
+    private void manageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageMouseClicked
+    
+    
+    
+    }//GEN-LAST:event_manageMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
