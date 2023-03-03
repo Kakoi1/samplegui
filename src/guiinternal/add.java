@@ -12,20 +12,22 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class add extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form add
-     */
+  
     public add() {
         initComponents();
         
          this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
          BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
          bi.setNorthPane(null);
+         
+         panel3.setBackground(new Color(255,255,255,50));
         
     }
     
     Color headcolor = new Color(153,204,255);
     Color bodycolor = new Color(255,204,204);
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,6 +40,7 @@ public class add extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
+        panel3 = new javax.swing.JPanel();
         save = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         discard = new javax.swing.JPanel();
@@ -48,12 +51,27 @@ public class add extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         ads = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        panel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panel3.setLayout(null);
 
         save.setBackground(new java.awt.Color(153, 204, 255));
         save.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -87,7 +105,8 @@ public class add extends javax.swing.JInternalFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel2.add(save, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 70, 30));
+        panel3.add(save);
+        save.setBounds(10, 310, 70, 30);
 
         discard.setBackground(new java.awt.Color(153, 204, 255));
         discard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -107,7 +126,8 @@ public class add extends javax.swing.JInternalFrame {
         jLabel4.setText("Discard");
         discard.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 30));
 
-        jPanel2.add(discard, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 400, 70, 30));
+        panel3.add(discard);
+        discard.setBounds(170, 310, 70, 30);
 
         update.setBackground(new java.awt.Color(153, 204, 255));
         update.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -141,7 +161,8 @@ public class add extends javax.swing.JInternalFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel2.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 70, 30));
+        panel3.add(update);
+        update.setBounds(90, 270, 70, 30);
 
         delete.setBackground(new java.awt.Color(153, 204, 255));
         delete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -161,7 +182,8 @@ public class add extends javax.swing.JInternalFrame {
         jLabel6.setText("Delete");
         delete.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 30));
 
-        jPanel2.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 70, -1));
+        panel3.add(delete);
+        delete.setBounds(170, 270, 70, 30);
 
         ads.setBackground(new java.awt.Color(153, 204, 255));
         ads.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -195,9 +217,58 @@ public class add extends javax.swing.JInternalFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel2.add(ads, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 360, 70, 30));
+        panel3.add(ads);
+        ads.setBounds(10, 270, 70, 30);
+        panel3.add(jTextField5);
+        jTextField5.setBounds(10, 180, 160, 30);
+        panel3.add(jTextField4);
+        jTextField4.setBounds(10, 140, 160, 30);
+        panel3.add(jTextField3);
+        jTextField3.setBounds(10, 100, 160, 30);
+        panel3.add(jTextField2);
+        jTextField2.setBounds(10, 60, 160, 30);
+        panel3.add(jTextField1);
+        jTextField1.setBounds(10, 20, 160, 30);
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 260, 450));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setText("Tank no.");
+        panel3.add(jLabel1);
+        jLabel1.setBounds(170, 20, 50, 30);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Fish Name");
+        panel3.add(jLabel2);
+        jLabel2.setBounds(170, 60, 60, 30);
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setText("Status");
+        panel3.add(jLabel8);
+        jLabel8.setBounds(170, 100, 50, 30);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setText("Quantity");
+        panel3.add(jLabel9);
+        jLabel9.setBounds(170, 140, 50, 30);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setText("Price");
+        panel3.add(jLabel10);
+        jLabel10.setBounds(170, 180, 50, 30);
+
+        jPanel2.add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 250, 410));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 250, 450));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][][] {
+            },
+            new String [] {
+                "Student ID", "Name", "Status"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 450));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -258,13 +329,26 @@ public class add extends javax.swing.JInternalFrame {
     private javax.swing.JPanel ads;
     private javax.swing.JPanel delete;
     private javax.swing.JPanel discard;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JPanel panel3;
     private javax.swing.JPanel save;
     private javax.swing.JPanel update;
     // End of variables declaration//GEN-END:variables
