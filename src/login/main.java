@@ -1,9 +1,12 @@
+package login;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package guipp;
+
+import guiinternal.settings;
 import java.awt.Color;
 import guiinternal.*;
 /**
@@ -20,7 +23,7 @@ public class main extends javax.swing.JFrame {
     }
     
     Color dashcolor = new Color(255,153,153);
-    Color headcolor = new Color (255,102,102);
+    Color headcolor = new Color (0,153,204);
     Color bodycolor = new Color (153,204,255);
 
     /**
@@ -41,6 +44,8 @@ public class main extends javax.swing.JFrame {
         report = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
+        setting = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         despane = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -124,16 +129,38 @@ public class main extends javax.swing.JFrame {
                 .addComponent(report, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(retri, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
 
         jPanel1.add(horizon);
-        horizon.setBounds(0, 0, 170, 490);
+        horizon.setBounds(0, 0, 170, 500);
 
         header.setBackground(new java.awt.Color(0, 153, 204));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        setting.setBackground(new java.awt.Color(255, 153, 153));
+        setting.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        setting.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                settingMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                settingMouseExited(evt);
+            }
+        });
+        setting.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-services-50.png"))); // NOI18N
+        setting.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 100, 50));
+
+        header.add(setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 70, 50));
+
         jPanel1.add(header);
-        header.setBounds(170, 0, 800, 40);
+        header.setBounds(170, 0, 800, 50);
 
         despane.setPreferredSize(new java.awt.Dimension(760, 420));
 
@@ -141,7 +168,7 @@ public class main extends javax.swing.JFrame {
         despane.setLayout(despaneLayout);
         despaneLayout.setHorizontalGroup(
             despaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 796, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         despaneLayout.setVerticalGroup(
             despaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +176,7 @@ public class main extends javax.swing.JFrame {
         );
 
         jPanel1.add(despane);
-        despane.setBounds(170, 40, 796, 450);
+        despane.setBounds(170, 50, 800, 450);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -205,6 +232,20 @@ public class main extends javax.swing.JFrame {
       
     }//GEN-LAST:event_reportMouseClicked
 
+    private void settingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingMouseEntered
+        setting.setBackground(headcolor);
+    }//GEN-LAST:event_settingMouseEntered
+
+    private void settingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingMouseExited
+         setting.setBackground(dashcolor);
+    }//GEN-LAST:event_settingMouseExited
+
+    private void settingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingMouseClicked
+        settings set = new settings();
+        
+        despane.add(set).setVisible(true);
+    }//GEN-LAST:event_settingMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -246,11 +287,13 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JDesktopPane despane;
     private javax.swing.JPanel header;
     private javax.swing.JPanel horizon;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel report;
     private javax.swing.JPanel retri;
+    private javax.swing.JPanel setting;
     // End of variables declaration//GEN-END:variables
 }

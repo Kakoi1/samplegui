@@ -5,8 +5,13 @@
  */
 package guiinternal;
 
+import login.login;
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import login.*;
+import login.login;
 
 /**
  *
@@ -24,8 +29,8 @@ public class settings extends javax.swing.JInternalFrame {
          BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
          bi.setNorthPane(null);
     }
-    Color headcolor = new Color(153,204,255);
-    Color bodycolor = new Color(255,204,204);
+    Color headcolor = new Color(0,153,204);
+    Color bodycolor = new Color(153,204,255);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,8 +73,8 @@ public class settings extends javax.swing.JInternalFrame {
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-user-100.png"))); // NOI18N
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 110, 110));
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-administrator-male-100.png"))); // NOI18N
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 100, 110));
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -99,6 +104,8 @@ public class settings extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel10);
         jLabel10.setBounds(10, 90, 100, 30);
 
+        jTextField1.setEditable(false);
+        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField1.setText("09090909");
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,10 +115,14 @@ public class settings extends javax.swing.JInternalFrame {
         jPanel1.add(jTextField1);
         jTextField1.setBounds(110, 90, 150, 30);
 
+        jTextField2.setEditable(false);
+        jTextField2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField2.setText("cebu");
         jPanel1.add(jTextField2);
         jTextField2.setBounds(110, 130, 150, 30);
 
+        jTextField3.setEditable(false);
+        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField3.setText("Roland");
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -145,18 +156,21 @@ public class settings extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Edit user");
-        edit.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 127, 112, -1));
+        edit.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 112, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-edit-100.png"))); // NOI18N
-        edit.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 110, 110));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-edit-account-100.png"))); // NOI18N
+        edit.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 100, 110));
 
         jPanel2.add(edit);
-        edit.setBounds(100, 40, 160, 160);
+        edit.setBounds(100, 40, 150, 160);
 
         out.setBackground(new java.awt.Color(0, 153, 204));
         out.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         out.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         out.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                outMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 outMouseEntered(evt);
             }
@@ -173,7 +187,7 @@ public class settings extends javax.swing.JInternalFrame {
         out.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 21, 112, -1));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-log-out-100.png"))); // NOI18N
-        out.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(27, 21, 112, 100));
+        out.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 112, 100));
 
         jPanel2.add(out);
         out.setBounds(530, 40, 160, 160);
@@ -210,6 +224,13 @@ public class settings extends javax.swing.JInternalFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void outMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_outMouseClicked
+        JFrame mainFrame = (JFrame)SwingUtilities.getWindowAncestor(this);
+        mainFrame.dispose();
+        login log = new login();
+        log.setVisible(true);
+    }//GEN-LAST:event_outMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
