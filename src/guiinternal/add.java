@@ -20,12 +20,13 @@ public class add extends javax.swing.JInternalFrame {
          BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
          bi.setNorthPane(null);
          
-         panel3.setBackground(new Color(255,255,255,50));
+         panel3.setBackground(new Color(255,255,255,20));
+        
         
     }
     
-    Color headcolor = new Color(153,204,255);
-    Color bodycolor = new Color(255,204,204);
+    Color bodycolor = new Color(153,204,255);
+    Color headcolor = new Color(255,153,153);
     
     
 
@@ -51,11 +52,11 @@ public class add extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         ads = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        pri = new javax.swing.JTextField();
+        quan = new javax.swing.JTextField();
+        stat = new javax.swing.JTextField();
+        fish = new javax.swing.JTextField();
+        num = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -67,13 +68,13 @@ public class add extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel3.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         panel3.setLayout(null);
 
-        save.setBackground(new java.awt.Color(153, 204, 255));
+        save.setBackground(new java.awt.Color(255, 153, 153));
         save.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         save.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         save.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,10 +109,13 @@ public class add extends javax.swing.JInternalFrame {
         panel3.add(save);
         save.setBounds(10, 310, 70, 30);
 
-        discard.setBackground(new java.awt.Color(153, 204, 255));
+        discard.setBackground(new java.awt.Color(255, 153, 153));
         discard.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         discard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         discard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                discardMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 discardMouseEntered(evt);
             }
@@ -129,7 +133,7 @@ public class add extends javax.swing.JInternalFrame {
         panel3.add(discard);
         discard.setBounds(170, 310, 70, 30);
 
-        update.setBackground(new java.awt.Color(153, 204, 255));
+        update.setBackground(new java.awt.Color(255, 153, 153));
         update.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -164,7 +168,7 @@ public class add extends javax.swing.JInternalFrame {
         panel3.add(update);
         update.setBounds(90, 270, 70, 30);
 
-        delete.setBackground(new java.awt.Color(153, 204, 255));
+        delete.setBackground(new java.awt.Color(255, 153, 153));
         delete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -185,7 +189,7 @@ public class add extends javax.swing.JInternalFrame {
         panel3.add(delete);
         delete.setBounds(170, 270, 70, 30);
 
-        ads.setBackground(new java.awt.Color(153, 204, 255));
+        ads.setBackground(new java.awt.Color(255, 153, 153));
         ads.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         ads.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         ads.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -219,16 +223,31 @@ public class add extends javax.swing.JInternalFrame {
 
         panel3.add(ads);
         ads.setBounds(10, 270, 70, 30);
-        panel3.add(jTextField5);
-        jTextField5.setBounds(10, 180, 160, 30);
-        panel3.add(jTextField4);
-        jTextField4.setBounds(10, 140, 160, 30);
-        panel3.add(jTextField3);
-        jTextField3.setBounds(10, 100, 160, 30);
-        panel3.add(jTextField2);
-        jTextField2.setBounds(10, 60, 160, 30);
-        panel3.add(jTextField1);
-        jTextField1.setBounds(10, 20, 160, 30);
+
+        pri.setBackground(new java.awt.Color(153, 204, 255));
+        pri.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        panel3.add(pri);
+        pri.setBounds(10, 180, 160, 30);
+
+        quan.setBackground(new java.awt.Color(153, 204, 255));
+        quan.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        panel3.add(quan);
+        quan.setBounds(10, 140, 160, 30);
+
+        stat.setBackground(new java.awt.Color(153, 204, 255));
+        stat.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        panel3.add(stat);
+        stat.setBounds(10, 100, 160, 30);
+
+        fish.setBackground(new java.awt.Color(153, 204, 255));
+        fish.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        panel3.add(fish);
+        fish.setBounds(10, 60, 160, 30);
+
+        num.setBackground(new java.awt.Color(153, 204, 255));
+        num.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        panel3.add(num);
+        num.setBounds(10, 20, 160, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("Tank no.");
@@ -255,9 +274,9 @@ public class add extends javax.swing.JInternalFrame {
         panel3.add(jLabel10);
         jLabel10.setBounds(170, 180, 50, 30);
 
-        jPanel2.add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 250, 410));
+        jPanel2.add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 250, 380));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 0, 250, 450));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 0, 280, 460));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][][] {
@@ -268,7 +287,7 @@ public class add extends javax.swing.JInternalFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 450));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 460));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -324,11 +343,20 @@ public class add extends javax.swing.JInternalFrame {
          ads.setBackground(headcolor);
     }//GEN-LAST:event_adsMouseExited
 
+    private void discardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_discardMouseClicked
+       num.setText("");
+       fish.setText("");
+       stat.setText("");
+       quan.setText("");
+       pri.setText("");
+    }//GEN-LAST:event_discardMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel ads;
     private javax.swing.JPanel delete;
     private javax.swing.JPanel discard;
+    private javax.swing.JTextField fish;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -343,13 +371,12 @@ public class add extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField num;
     private javax.swing.JPanel panel3;
+    private javax.swing.JTextField pri;
+    private javax.swing.JTextField quan;
     private javax.swing.JPanel save;
+    private javax.swing.JTextField stat;
     private javax.swing.JPanel update;
     // End of variables declaration//GEN-END:variables
 }

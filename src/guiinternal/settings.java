@@ -8,6 +8,7 @@ package guiinternal;
 import login.login;
 import java.awt.Color;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import login.*;
@@ -28,9 +29,13 @@ public class settings extends javax.swing.JInternalFrame {
          this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
          BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
          bi.setNorthPane(null);
+       
     }
     Color headcolor = new Color(0,153,204);
     Color bodycolor = new Color(153,204,255);
+    
+   
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -51,7 +56,7 @@ public class settings extends javax.swing.JInternalFrame {
         jLabel10 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         edit = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -74,15 +79,15 @@ public class settings extends javax.swing.JInternalFrame {
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-administrator-male-100.png"))); // NOI18N
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 100, 110));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 100, 110));
 
         jLabel12.setFont(new java.awt.Font("Trebuchet MS", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Roland");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 112, -1));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 120, -1));
 
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(530, 0, 160, 160);
+        jPanel3.setBounds(640, 0, 120, 160);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setText("Account Settings");
@@ -105,8 +110,10 @@ public class settings extends javax.swing.JInternalFrame {
         jLabel10.setBounds(10, 90, 100, 30);
 
         jTextField1.setEditable(false);
+        jTextField1.setBackground(new java.awt.Color(153, 204, 255));
         jTextField1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField1.setText("09090909");
+        jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -116,23 +123,27 @@ public class settings extends javax.swing.JInternalFrame {
         jTextField1.setBounds(110, 90, 150, 30);
 
         jTextField2.setEditable(false);
+        jTextField2.setBackground(new java.awt.Color(153, 204, 255));
         jTextField2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jTextField2.setText("cebu");
+        jTextField2.setBorder(null);
         jPanel1.add(jTextField2);
         jTextField2.setBounds(110, 130, 150, 30);
 
-        jTextField3.setEditable(false);
-        jTextField3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jTextField3.setText("Roland");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        name.setEditable(false);
+        name.setBackground(new java.awt.Color(153, 204, 255));
+        name.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        name.setText("Roland");
+        name.setBorder(null);
+        name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                nameActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(110, 50, 150, 30);
+        jPanel1.add(name);
+        name.setBounds(110, 50, 150, 30);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 160));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 160));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.setLayout(null);
@@ -192,7 +203,7 @@ public class settings extends javax.swing.JInternalFrame {
         jPanel2.add(out);
         out.setBounds(530, 40, 160, 160);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 800, 290));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 810, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -217,9 +228,9 @@ public class settings extends javax.swing.JInternalFrame {
         out.setBackground(headcolor);
     }//GEN-LAST:event_outMouseExited
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_nameActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
@@ -252,7 +263,7 @@ public class settings extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField name;
     private javax.swing.JPanel out;
     // End of variables declaration//GEN-END:variables
 }

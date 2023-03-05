@@ -9,10 +9,17 @@ package login;
 import guiinternal.settings;
 import java.awt.Color;
 import guiinternal.*;
+import java.awt.Image;
+import java.awt.Toolkit;
+import javax.swing.ImageIcon;
+
+
 /**
  *
  * @author College-PC
  */
+
+
 public class main extends javax.swing.JFrame {
 
     /**
@@ -20,6 +27,8 @@ public class main extends javax.swing.JFrame {
      */
     public main() {
         initComponents();
+       seticon();
+    
     }
     
     Color dashcolor = new Color(255,153,153);
@@ -40,15 +49,16 @@ public class main extends javax.swing.JFrame {
         dashpane = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         retri = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         report = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
+        account = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
-        setting = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         despane = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(null);
@@ -85,10 +95,10 @@ public class main extends javax.swing.JFrame {
         });
         retri.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Retrieve");
-        retri.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
+        jLabel13.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Retrieve");
+        retri.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
 
         report.setBackground(new java.awt.Color(255, 153, 153));
         report.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -109,16 +119,42 @@ public class main extends javax.swing.JFrame {
         jLabel12.setText("View Report");
         report.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
 
+        account.setBackground(new java.awt.Color(255, 153, 153));
+        account.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                accountMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                accountMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                accountMouseExited(evt);
+            }
+        });
+        account.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Trebuchet MS", 1, 14)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Account");
+        account.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 170, 20));
+
         javax.swing.GroupLayout horizonLayout = new javax.swing.GroupLayout(horizon);
         horizon.setLayout(horizonLayout);
         horizonLayout.setHorizontalGroup(
             horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(horizonLayout.createSequentialGroup()
                 .addGroup(horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(retri, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(report, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dashpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(horizonLayout.createSequentialGroup()
+                        .addGroup(horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(report, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(dashpane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, horizonLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(retri, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         horizonLayout.setVerticalGroup(
             horizonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -129,7 +165,9 @@ public class main extends javax.swing.JFrame {
                 .addComponent(report, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(retri, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(186, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(account, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(138, Short.MAX_VALUE))
         );
 
         jPanel1.add(horizon);
@@ -137,30 +175,8 @@ public class main extends javax.swing.JFrame {
 
         header.setBackground(new java.awt.Color(0, 153, 204));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        setting.setBackground(new java.awt.Color(255, 153, 153));
-        setting.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        setting.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                settingMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                settingMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                settingMouseExited(evt);
-            }
-        });
-        setting.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-services-50.png"))); // NOI18N
-        setting.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 100, 50));
-
-        header.add(setting, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 0, 70, 50));
-
         jPanel1.add(header);
-        header.setBounds(170, 0, 800, 50);
+        header.setBounds(170, 0, 820, 50);
 
         despane.setPreferredSize(new java.awt.Dimension(760, 420));
 
@@ -168,21 +184,21 @@ public class main extends javax.swing.JFrame {
         despane.setLayout(despaneLayout);
         despaneLayout.setHorizontalGroup(
             despaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 816, Short.MAX_VALUE)
         );
         despaneLayout.setVerticalGroup(
             despaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 450, Short.MAX_VALUE)
+            .addGap(0, 484, Short.MAX_VALUE)
         );
 
         jPanel1.add(despane);
-        despane.setBounds(170, 50, 800, 450);
+        despane.setBounds(170, 50, 816, 484);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 963, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 982, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,19 +248,19 @@ public class main extends javax.swing.JFrame {
       
     }//GEN-LAST:event_reportMouseClicked
 
-    private void settingMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingMouseEntered
-        setting.setBackground(headcolor);
-    }//GEN-LAST:event_settingMouseEntered
+    private void accountMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseEntered
+        account.setBackground(bodycolor);
+    }//GEN-LAST:event_accountMouseEntered
 
-    private void settingMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingMouseExited
-         setting.setBackground(dashcolor);
-    }//GEN-LAST:event_settingMouseExited
+    private void accountMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseExited
+        account.setBackground(dashcolor);
+    }//GEN-LAST:event_accountMouseExited
 
-    private void settingMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingMouseClicked
-        settings set = new settings();
+    private void accountMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_accountMouseClicked
+          settings set = new settings();
         
         despane.add(set).setVisible(true);
-    }//GEN-LAST:event_settingMouseClicked
+    }//GEN-LAST:event_accountMouseClicked
 
     /**
      * @param args the command line arguments
@@ -283,17 +299,24 @@ public class main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel account;
     private javax.swing.JPanel dashpane;
     private javax.swing.JDesktopPane despane;
     private javax.swing.JPanel header;
     private javax.swing.JPanel horizon;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel report;
     private javax.swing.JPanel retri;
-    private javax.swing.JPanel setting;
     // End of variables declaration//GEN-END:variables
+
+    private void seticon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/fish.png")));
+        setTitle("Aqua Life");
+    }
+
+   
 }

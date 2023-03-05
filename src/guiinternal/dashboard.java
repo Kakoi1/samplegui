@@ -68,7 +68,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(10, 40, 200, 30);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 160));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 810, 160));
 
         jPanel2.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.setLayout(null);
@@ -129,7 +129,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         jPanel2.add(setting);
         setting.setBounds(530, 40, 160, 160);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 800, 290));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 810, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
