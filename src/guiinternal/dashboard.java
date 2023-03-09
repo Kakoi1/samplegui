@@ -56,7 +56,7 @@ public class dashboard extends javax.swing.JInternalFrame {
         jPanel3.setBackground(new java.awt.Color(255, 153, 153));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(530, 0, 170, 160);
+        jPanel3.setBounds(630, 0, 120, 160);
 
         jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
         jLabel1.setText("Aquatic life Recording Application");
