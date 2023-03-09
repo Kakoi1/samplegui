@@ -57,84 +57,60 @@ Color exit = new Color (153,204,255);
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        panel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        panel2 = new javax.swing.JPanel();
+        logclose = new javax.swing.JLabel();
+        mini = new javax.swing.JLabel();
         username = new javax.swing.JTextField();
-        password = new javax.swing.JPasswordField();
-        cancel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         login = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        cancel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        password = new javax.swing.JPasswordField();
+        jLabel4 = new javax.swing.JLabel();
         panels = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(682, 396));
-        setPreferredSize(new java.awt.Dimension(689, 455));
+        setUndecorated(true);
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 204));
-        jPanel2.setLayout(null);
+        panel1.setBackground(new java.awt.Color(0, 153, 204));
+        panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/aqua.png"))); // NOI18N
-        jPanel2.add(jLabel1);
-        jLabel1.setBounds(20, 140, 301, 167);
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/kisspng-seed-flower-dark-helmet-vimeo-medical-cannabis-ocean-logo-5b1723af957123.4894901515282431196121.png"))); // NOI18N
-        jLabel4.setText("jLabel4");
-        jPanel2.add(jLabel4);
-        jLabel4.setBounds(-30, -30, 550, 512);
+        panel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/coolest.jpg"))); // NOI18N
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(0, 0, 340, 460);
+        panel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 360, 460));
 
-        jPanel1.setBackground(new java.awt.Color(255, 153, 153));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        panel2.setBackground(new java.awt.Color(255, 153, 153));
+        panel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        logclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-close-window-32 (1).png"))); // NOI18N
+        logclose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logclose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logcloseMouseClicked(evt);
+            }
+        });
+        panel2.add(logclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, -1, -1));
+
+        mini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-subtract-30.png"))); // NOI18N
+        mini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mini.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                miniMouseClicked(evt);
+            }
+        });
+        panel2.add(mini, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, -1));
 
         username.setBackground(new java.awt.Color(255, 153, 153));
         username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         username.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Username", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 13))); // NOI18N
-        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 220, 50));
-
-        password.setBackground(new java.awt.Color(255, 153, 153));
-        password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        password.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Password"));
-        jPanel1.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 220, 50));
-
-        cancel.setBackground(new java.awt.Color(153, 204, 255));
-        cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cancelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                cancelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                cancelMouseExited(evt);
-            }
-        });
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setText("Exit");
-
-        javax.swing.GroupLayout cancelLayout = new javax.swing.GroupLayout(cancel);
-        cancel.setLayout(cancelLayout);
-        cancelLayout.setHorizontalGroup(
-            cancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cancelLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel3)
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-        cancelLayout.setVerticalGroup(
-            cancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 240, 90, 40));
+        panel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 220, 50));
 
         login.setBackground(new java.awt.Color(153, 204, 255));
         login.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -168,24 +144,66 @@ Color exit = new Color (153,204,255);
             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 90, 40));
+        panel2.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 300, -1, -1));
+
+        cancel.setBackground(new java.awt.Color(153, 204, 255));
+        cancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cancel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cancelMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cancelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cancelMouseExited(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setText("Exit");
+
+        javax.swing.GroupLayout cancelLayout = new javax.swing.GroupLayout(cancel);
+        cancel.setLayout(cancelLayout);
+        cancelLayout.setHorizontalGroup(
+            cancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cancelLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel3)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+        cancelLayout.setVerticalGroup(
+            cancelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        panel2.add(cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
+
+        password.setBackground(new java.awt.Color(255, 153, 153));
+        password.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        password.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        panel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 220, 50));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/kisspng-seed-flower-dark-helmet-vimeo-medical-cannabis-ocean-logo-5b1723af957123.4894901515282431196121.png"))); // NOI18N
+        jLabel4.setText("jLabel4");
+        panel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, -1, -1));
 
         panels.setLayout(null);
-        jPanel1.add(panels, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 280, 270));
+        panel2.add(panels, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 280, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(panel2, javax.swing.GroupLayout.PREFERRED_SIZE, 460, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -221,6 +239,17 @@ Color exit = new Color (153,204,255);
          System.exit(a);
      }
     }//GEN-LAST:event_cancelMouseClicked
+
+    private void logcloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logcloseMouseClicked
+         int a =JOptionPane.showConfirmDialog(null, "Confirm Exit?");
+     if(a==JOptionPane.YES_OPTION){
+         System.exit(a);
+     }
+    }//GEN-LAST:event_logcloseMouseClicked
+
+    private void miniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_miniMouseClicked
+        setState(ICONIFIED);
+    }//GEN-LAST:event_miniMouseClicked
 
     /**
      * @param args the command line arguments
@@ -258,15 +287,18 @@ Color exit = new Color (153,204,255);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel cancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel logclose;
     private javax.swing.JPanel login;
+    private javax.swing.JLabel mini;
+    private javax.swing.JPanel panel1;
+    private javax.swing.JPanel panel2;
     private javax.swing.JPanel panels;
     private javax.swing.JPasswordField password;
     private javax.swing.JTextField username;

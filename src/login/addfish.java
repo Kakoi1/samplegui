@@ -142,6 +142,9 @@ public class addfish extends javax.swing.JFrame {
         update.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 updateMouseEntered(evt);
             }
@@ -253,6 +256,13 @@ public class addfish extends javax.swing.JFrame {
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
     this.dispose();
     }//GEN-LAST:event_deleteMouseClicked
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+    num.setText("");
+    fish.setText("");
+    quan.setText("");
+    pri.setText("");
+    }//GEN-LAST:event_updateMouseClicked
 
     /**
      * @param args the command line arguments

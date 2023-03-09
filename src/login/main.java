@@ -12,6 +12,7 @@ import guiinternal.*;
 import java.awt.Image;
 import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -55,9 +56,12 @@ public class main extends javax.swing.JFrame {
         account = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
+        mainclose = new javax.swing.JLabel();
+        mainmini = new javax.swing.JLabel();
         despane = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
@@ -175,6 +179,25 @@ public class main extends javax.swing.JFrame {
 
         header.setBackground(new java.awt.Color(0, 153, 204));
         header.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        mainclose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-close-window-32 (1).png"))); // NOI18N
+        mainclose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainclose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                maincloseMouseClicked(evt);
+            }
+        });
+        header.add(mainclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, -1, -1));
+
+        mainmini.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8-subtract-30.png"))); // NOI18N
+        mainmini.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        mainmini.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mainminiMouseClicked(evt);
+            }
+        });
+        header.add(mainmini, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, -1, -1));
+
         jPanel1.add(header);
         header.setBounds(170, 0, 820, 50);
 
@@ -262,6 +285,17 @@ public class main extends javax.swing.JFrame {
         despane.add(set).setVisible(true);
     }//GEN-LAST:event_accountMouseClicked
 
+    private void maincloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maincloseMouseClicked
+          int a =JOptionPane.showConfirmDialog(null, "Confirm Exit?");
+     if(a==JOptionPane.YES_OPTION){
+         System.exit(a);
+     }
+    }//GEN-LAST:event_maincloseMouseClicked
+
+    private void mainminiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mainminiMouseClicked
+    setState(ICONIFIED);
+    }//GEN-LAST:event_mainminiMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -309,6 +343,8 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel mainclose;
+    private javax.swing.JLabel mainmini;
     private javax.swing.JPanel report;
     private javax.swing.JPanel retri;
     // End of variables declaration//GEN-END:variables
