@@ -7,6 +7,7 @@ package login;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Toolkit;
 import javax.swing.BorderFactory;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -30,6 +31,8 @@ public class register extends javax.swing.JFrame {
         repas.setBackground(new Color(255,255,255,50));
         ad.setBackground(new Color(255,255,255,50));
         no.setBackground(new Color(255,255,255,50));
+        
+        seticon();
     }
 Color hover = new Color (255,153,153);
 Color exit = new Color (0,153,204);
@@ -83,9 +86,11 @@ Color exit = new Color (0,153,204);
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.setLayout(null);
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 153));
+        jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel11.setFont(new java.awt.Font("Trebuchet MS", 1, 18)); // NOI18N
@@ -93,43 +98,43 @@ Color exit = new Color (0,153,204);
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, -1, -1));
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 360, 60);
+        jPanel2.setBounds(0, 0, 400, 60);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel1.setText("Name:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 120, 100, 15);
+        jLabel1.setBounds(30, 120, 100, 15);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel2.setText("Username:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 160, 100, 15);
+        jLabel2.setBounds(30, 160, 100, 15);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel3.setText("Password:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(10, 200, 100, 15);
+        jLabel3.setBounds(30, 200, 100, 15);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel4.setText("Retype Password:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(0, 240, 110, 15);
+        jLabel4.setBounds(10, 240, 120, 15);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel5.setText("Contact no.:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(0, 280, 110, 15);
+        jLabel5.setBounds(20, 280, 110, 15);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel6.setText("Address:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(50, 310, 60, 15);
+        jLabel6.setBounds(70, 310, 60, 15);
 
         nm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         nm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -139,27 +144,27 @@ Color exit = new Color (0,153,204);
             }
         });
         jPanel1.add(nm);
-        nm.setBounds(120, 110, 200, 30);
+        nm.setBounds(140, 110, 200, 30);
 
         us.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         us.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(us);
-        us.setBounds(120, 150, 200, 30);
+        us.setBounds(140, 150, 200, 30);
 
         pas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         pas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(pas);
-        pas.setBounds(120, 190, 200, 30);
+        pas.setBounds(140, 190, 200, 30);
 
         repas.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         repas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(repas);
-        repas.setBounds(120, 230, 200, 30);
+        repas.setBounds(140, 230, 200, 30);
 
         no.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         no.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         jPanel1.add(no);
-        no.setBounds(120, 270, 200, 30);
+        no.setBounds(140, 270, 200, 30);
 
         ad.setColumns(20);
         ad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -168,7 +173,7 @@ Color exit = new Color (0,153,204);
         jScrollPane1.setViewportView(ad);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(120, 310, 200, 80);
+        jScrollPane1.setBounds(140, 310, 200, 80);
 
         login.setBackground(new java.awt.Color(0, 153, 204));
         login.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -204,7 +209,7 @@ Color exit = new Color (0,153,204);
         );
 
         jPanel1.add(login);
-        login.setBounds(220, 400, 90, 40);
+        login.setBounds(240, 410, 90, 40);
 
         cancel.setBackground(new java.awt.Color(0, 153, 204));
         cancel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -239,7 +244,7 @@ Color exit = new Color (0,153,204);
         );
 
         jPanel1.add(cancel);
-        cancel.setBounds(50, 400, 90, 40);
+        cancel.setBounds(60, 410, 90, 40);
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/kisspng-seed-flower-dark-helmet-vimeo-medical-cannabis-ocean-logo-5b1723af957123.4894901515282431196121.png"))); // NOI18N
         jLabel10.setText("jLabel10");
@@ -250,11 +255,11 @@ Color exit = new Color (0,153,204);
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 468, Short.MAX_VALUE)
         );
 
         pack();
@@ -366,4 +371,9 @@ Color exit = new Color (0,153,204);
     private javax.swing.JTextField repas;
     private javax.swing.JTextField us;
     // End of variables declaration//GEN-END:variables
+
+    private void seticon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/fish.png")));
+        setTitle("Aqua Life");
+    }
 }

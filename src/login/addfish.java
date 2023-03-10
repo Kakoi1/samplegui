@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package login;
-
+import login.main;
 import java.awt.Color;
 
 /**
@@ -255,6 +255,9 @@ public class addfish extends javax.swing.JFrame {
 
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
     this.dispose();
+    main m = new main();
+    m.setVisible(true);
+    
     }//GEN-LAST:event_deleteMouseClicked
 
     private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked

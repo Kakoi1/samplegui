@@ -5,8 +5,11 @@
  */
 package guiinternal;
 import java.awt.Color;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import login.addfish;
+import login.main;
 /**
  *
  * @author College-PC
@@ -284,10 +287,13 @@ public class add extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_searchMouseExited
 
     private void adsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adsMouseClicked
+        JFrame mainJFrame = (JFrame)SwingUtilities.getWindowAncestor(this);
+       mainJFrame.dispose();
     addfish af = new addfish();
     
-    af.setVisible(true);
+   af.setVisible(true);
     
+   
     }//GEN-LAST:event_adsMouseClicked
 
 

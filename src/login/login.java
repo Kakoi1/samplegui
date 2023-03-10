@@ -192,6 +192,7 @@ Color exit = new Color (153,204,255);
 
         create.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         create.setText("Create Account");
+        create.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         create.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 createMouseClicked(evt);
