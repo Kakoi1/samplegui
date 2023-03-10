@@ -100,7 +100,7 @@ public class settings extends javax.swing.JInternalFrame {
         jLabel2.setBounds(10, 130, 100, 30);
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jLabel5.setText("Admin name:");
+        jLabel5.setText("User name:");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(10, 50, 100, 30);
 

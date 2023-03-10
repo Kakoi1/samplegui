@@ -70,6 +70,7 @@ Color exit = new Color (153,204,255);
         cancel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         password = new javax.swing.JPasswordField();
+        create = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         panels = new javax.swing.JPanel();
 
@@ -110,6 +111,11 @@ Color exit = new Color (153,204,255);
         username.setBackground(new java.awt.Color(255, 153, 153));
         username.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         username.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Username", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Century Gothic", 1, 13))); // NOI18N
+        username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                usernameActionPerformed(evt);
+            }
+        });
         panel2.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 220, 50));
 
         login.setBackground(new java.awt.Color(153, 204, 255));
@@ -184,6 +190,21 @@ Color exit = new Color (153,204,255);
         password.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3), "Password", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         panel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, 220, 50));
 
+        create.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        create.setText("Create Account");
+        create.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                createMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                createMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                createMouseExited(evt);
+            }
+        });
+        panel2.add(create, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 360, -1, -1));
+
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/kisspng-seed-flower-dark-helmet-vimeo-medical-cannabis-ocean-logo-5b1723af957123.4894901515282431196121.png"))); // NOI18N
         jLabel4.setText("jLabel4");
         panel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-40, -20, -1, -1));
@@ -251,6 +272,25 @@ Color exit = new Color (153,204,255);
         setState(ICONIFIED);
     }//GEN-LAST:event_miniMouseClicked
 
+    private void createMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createMouseEntered
+    create.setForeground(Color.BLUE);
+    }//GEN-LAST:event_createMouseEntered
+
+    private void createMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createMouseExited
+    create.setForeground(Color.BLACK);
+    }//GEN-LAST:event_createMouseExited
+
+    private void createMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createMouseClicked
+    register reg = new register();
+    
+    reg.setVisible(true);
+    this.dispose();
+    }//GEN-LAST:event_createMouseClicked
+
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,6 +329,7 @@ Color exit = new Color (153,204,255);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JPanel cancel;
+    private javax.swing.JLabel create;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
