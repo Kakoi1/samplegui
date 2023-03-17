@@ -4,12 +4,17 @@
  * and open the template in the editor.
  */
 package guiinternal;
+import config.dbconnect;
 import java.awt.Color;
+import java.sql.ResultSet;
+
+import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import login.addfish;
 import login.main;
+import net.proteanit.sql.DbUtils;
 /**
  *
  * @author College-PC
@@ -27,6 +32,20 @@ public class add extends javax.swing.JInternalFrame {
         
         search.setOpaque(false);
         search.setBackground(new Color(0,0,0,0));
+        
+    }
+    public void displaydata(){
+        try{
+     dbconnect db = new dbconnect();
+     
+     ResultSet rs = db.getData("SELECT * FROM tbl_student");
+     
+     table.setModel(DbUtils.resultSetToTableModel(rs));
+        
+        }catch(SQLException ex){
+            
+            System.out.println("Error"+ex);
+        } 
         
     }
     
@@ -59,8 +78,16 @@ public class add extends javax.swing.JInternalFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        table = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        id = new javax.swing.JTextField();
+        name = new javax.swing.JTextField();
+        add = new javax.swing.JTextField();
+        stat = new javax.swing.JTextField();
+        cont = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -211,20 +238,55 @@ public class add extends javax.swing.JInternalFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 60));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Tank no.", "Fish name", "Quantity", "Price", "Status"
-            }
-        ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane1.setViewportView(table);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 800, 280));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 150, 460, 290));
+
+        jButton1.setText("display");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, -1, -1));
+
+        jButton2.setText("add");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, -1));
+
+        jButton3.setText("update");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
+
+        id.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                idActionPerformed(evt);
+            }
+        });
+        jPanel2.add(id, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 190, -1));
+        jPanel2.add(name, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 190, -1));
+        jPanel2.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 190, -1));
+
+        stat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statActionPerformed(evt);
+            }
+        });
+        jPanel2.add(stat, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 190, -1));
+        jPanel2.add(cont, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 190, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 440));
 
@@ -296,11 +358,47 @@ public class add extends javax.swing.JInternalFrame {
    
     }//GEN-LAST:event_adsMouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+       displaydata();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void statActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statActionPerformed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+      dbconnect dbc = new dbconnect();
+
+        dbc.insertData("INSERT INTO tbl_student (st_name, st_address, st_status, st_contact) "
+
+                + "VALUES ('"+name.getText()+"', '"+add.getText()+"','"+stat.getText()+"','"+cont.getText()+"')");
+
+        displaydata();
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void idActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_idActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField add;
     private javax.swing.JPanel ads;
+    private javax.swing.JTextField cont;
     private javax.swing.JPanel delete;
     private javax.swing.JPanel discard;
+    private javax.swing.JTextField id;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -310,9 +408,11 @@ public class add extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField name;
     private javax.swing.JTextField search;
+    private javax.swing.JTextField stat;
+    private javax.swing.JTable table;
     private javax.swing.JPanel update;
     // End of variables declaration//GEN-END:variables
 }
