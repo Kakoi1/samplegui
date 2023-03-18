@@ -10,8 +10,10 @@ import java.sql.ResultSet;
 
 import java.sql.SQLException;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.TableModel;
 import login.addfish;
 import login.main;
 import net.proteanit.sql.DbUtils;
@@ -49,6 +51,16 @@ public class add extends javax.swing.JInternalFrame {
         
     }
     
+    
+    public void reset(){
+    id.setText("");
+    stat.setText("");
+    name.setText("");
+    add.setText("");
+    cont.setText("");
+        
+    }
+    
     Color bodycolor = new Color(153,204,255);
     Color headcolor = new Color(255,153,153);
     Color hover = new Color(0,153,204);
@@ -82,7 +94,7 @@ public class add extends javax.swing.JInternalFrame {
         table = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        reset = new javax.swing.JButton();
         id = new javax.swing.JTextField();
         name = new javax.swing.JTextField();
         add = new javax.swing.JTextField();
@@ -136,6 +148,9 @@ public class add extends javax.swing.JInternalFrame {
         update.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         update.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 updateMouseEntered(evt);
             }
@@ -170,6 +185,9 @@ public class add extends javax.swing.JInternalFrame {
         delete.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         delete.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 deleteMouseEntered(evt);
             }
@@ -238,6 +256,11 @@ public class add extends javax.swing.JInternalFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 820, 60));
 
+        table.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(table);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(352, 150, 460, 290));
@@ -263,13 +286,18 @@ public class add extends javax.swing.JInternalFrame {
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, -1, -1));
 
-        jButton3.setText("update");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        reset.setText("reset");
+        reset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                resetMouseClicked(evt);
             }
         });
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
+        reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resetActionPerformed(evt);
+            }
+        });
+        jPanel2.add(reset, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
 
         id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -362,9 +390,9 @@ public class add extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_resetActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
        displaydata();
@@ -388,6 +416,47 @@ public class add extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idActionPerformed
 
+    private void tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableMouseClicked
+    int  rowIndex=table.getSelectedRow();
+ if(rowIndex <0){
+     
+ }else{
+     TableModel model=table.getModel();
+     id.setText(""+model.getValueAt(rowIndex, 0));
+     name.setText(""+model.getValueAt(rowIndex, 1));
+     add.setText(""+model.getValueAt(rowIndex, 2));
+     cont.setText(""+model.getValueAt(rowIndex, 3));
+     stat.setText(""+model.getValueAt(rowIndex, 4));
+ 
+       
+       
+ }
+    }//GEN-LAST:event_tableMouseClicked
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+    dbconnect dbc = new dbconnect();
+        int num = dbc.updateData("UPDATE tbl_student "
+                + "SET st_name = '"+name.getText()+"', st_address='"+add.getText()+"', "
+                        + "st_status ='"+stat.getText()+"', st_contact='"+cont.getText()+"'  "
+                                + "WHERE st_id = '"+id.getText()+"'");
+       
+        if(num == 0){
+           
+        }else{
+           JOptionPane.showMessageDialog(null, "Updated Successfully!");
+           displaydata();
+           reset();
+        }
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteMouseClicked
+
+    private void resetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_resetMouseClicked
+     reset();
+    }//GEN-LAST:event_resetMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField add;
@@ -398,7 +467,6 @@ public class add extends javax.swing.JInternalFrame {
     private javax.swing.JTextField id;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -410,6 +478,7 @@ public class add extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField name;
+    private javax.swing.JButton reset;
     private javax.swing.JTextField search;
     private javax.swing.JTextField stat;
     private javax.swing.JTable table;
